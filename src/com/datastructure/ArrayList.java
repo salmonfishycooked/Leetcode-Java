@@ -52,6 +52,11 @@ public class ArrayList<T> {
         return oldElement;
     }
 
+    /**
+     * 移除第一个出现的指定元素
+     * @param o 指定的元素
+     * @return 是否移除成功
+     */
     public boolean remove(Object o) {
         int i = 0;
         if (o == null) {
@@ -63,6 +68,7 @@ public class ArrayList<T> {
                 if (o.equals(elementData[i])) break;
             }
         }
+        if (i == size) return false;
         fastRemove(i);
         return true;
     }
