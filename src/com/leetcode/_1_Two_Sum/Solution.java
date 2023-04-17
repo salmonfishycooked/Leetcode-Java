@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 哈希表解法
+ * 哈希映射解法
  * 时间复杂度：O(n)
  * 空间复杂度：O(n)
  */
