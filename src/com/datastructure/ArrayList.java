@@ -1,5 +1,7 @@
 package com.datastructure;
 
+import java.util.Objects;
+
 /**
  * 顺序表
  * @param <T> 顺序表中存放的元素类型
@@ -14,7 +16,7 @@ public class ArrayList<T> {
      */
     @SuppressWarnings("unchecked")
     public T get(int index) {
-        rangeCheck(index);
+        Objects.checkIndex(index, size);
         return (T) elementData[index];
     }
 
@@ -34,7 +36,7 @@ public class ArrayList<T> {
      * @param index 插入位置
      */
     public void add(T element, int index) {
-        rangeCheck(index);
+        rangeAddCheck(index);
         checkGrow();
         System.arraycopy(elementData, index, elementData, index + 1, size - index);
         elementData[index] = element;
@@ -46,7 +48,7 @@ public class ArrayList<T> {
      * @return 被删除的元素
      */
     public T remove(int index) {
-        rangeCheck(index);
+        Objects.checkIndex(index, size);
         @SuppressWarnings("unchecked") T oldElement = (T) elementData[index];
         fastRemove(index);
         return oldElement;
@@ -120,7 +122,7 @@ public class ArrayList<T> {
     /**
      * 检查当前访问的 index 是否超过数组的 size
      */
-    private void rangeCheck(int index) {
+    private void rangeAddCheck(int index) {
         if (index > size || index < 0) {
             throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
         }
