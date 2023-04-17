@@ -100,7 +100,7 @@ public class ArrayList<T> {
      * 当原顺序表容量不够的时候，进行扩容
      */
     private void grow() {
-        int newCapacity = capacity << 1; // 扩容为原来的 2 倍
+        int newCapacity = capacity + capacity >> 1; // 扩容为原来的 1.5 倍
         Object[] newElementData = new Object[newCapacity];
         System.arraycopy(elementData, 0, newElementData, 0, size);
         elementData = newElementData;
