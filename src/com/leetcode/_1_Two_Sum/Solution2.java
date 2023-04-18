@@ -6,7 +6,7 @@ package com.leetcode._1_Two_Sum;
  * 空间复杂度：O(1)
  */
 
-public class Solution2 {
+class Solution2 {
     public int[] twoSum(int[] nums, int target) {
         int key;
         for (int i = 0; i < nums.length; ++i) {
