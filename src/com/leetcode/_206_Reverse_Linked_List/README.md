@@ -46,7 +46,7 @@ Output: []
 
 首先我们来看一张图
 
-![export2](./assets/export2.png)
+![img2](./assets/img2.png)
 
 这里我们要把  `node` 结点进行反转，该怎么办？
 
